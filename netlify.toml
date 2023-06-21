@@ -1,0 +1,21 @@
+[build]
+  # directory to change to build in
+  base = "/"
+
+  # relativate path for the build output (www/dist/)
+  publish = "/"
+
+  # build command
+  command = "/dev/null"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
+[functions]
+  # Directory with serverless functions
+  directory = "functions/"
+
+[[redirects]]
+  from = "/serverless/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
